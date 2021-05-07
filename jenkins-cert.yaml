@@ -5,4 +5,4 @@ metadata:
   namespace: cmp-jenkins-ns
 spec:
   domains:
-    - jenkins
+    - cmp-poc-api.com
