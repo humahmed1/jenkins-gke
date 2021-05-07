@@ -2,7 +2,7 @@ apiVersion: networking.gke.io/v1beta1
 kind: ManagedCertificate
 metadata:
   name: cmp-cert
-  namespace: cmp-ns
+  namespace: cmp-jenkins-ns
 spec:
   domains:
     - jenkins

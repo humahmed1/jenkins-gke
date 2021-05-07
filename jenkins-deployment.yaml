@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cmp-deployment
-  namespace: cmp-ns
+  namespace: cmp-jenkins-ns
   labels:
     app: cmp-deployment
 spec:

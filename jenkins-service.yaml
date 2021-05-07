@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cmp-service
-  namespace: cmp-ns
+  namespace: cmp-jenkins-ns
   annotations:
     beta.cloud.google.com/backend-config: '{"ports": {"80":"cmp-backend"}}'
 spec:

@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: cmp-ingress
-  namespace: cmp-ns
+  namespace: cmp-jenkins-ns
   annotations:
     kubernetes.io/ingress.global-static-ip-name: cmp-ext-ip
     networking.gke.io/managed-certificates: cmp-cert
