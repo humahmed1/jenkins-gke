@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cmp-ingress
+  namespace: cmp-ns
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: cmp-ext-ip
+    networking.gke.io/managed-certificates: cmp-cert
+spec:
+  rules:
+    - host: jenkins
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: cmp-service
+              servicePort: 80

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cmp-deployment
+  namespace: cmp-ns
+  labels:
+    app: cmp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cmp-deployment
+  template:
+    metadata:
+      labels:
+        app: cmp-deployment
+    spec:
+      containers:
+        - name: cmp-deployment
+          image: gcr.io/burner-humahmed1/cmp-jenkins-img:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: 8080
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 2
+            failureThreshold: 5

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cmp-service
+  namespace: cmp-ns
+  annotations:
+    beta.cloud.google.com/backend-config: '{"ports": {"80":"cmp-backend"}}'
+spec:
+  selector:
+    app: cmp-deployment
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: NodePort
